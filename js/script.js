@@ -22,7 +22,7 @@ function palindromFunc(){
     let palWord = palindromaEl.value; 
     let msg;
     for (let i = palWord.length - 1; i >= 0; i --){
-        if( palWord[i] === palWord){
+        if( palWord[i] === palWord[palWord.length - 1 - i]){
             msg = 'Si la parola è palindroma';
         }else{
             msg = ' No,prova con un altra parola';
