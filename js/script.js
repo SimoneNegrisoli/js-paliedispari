@@ -17,10 +17,19 @@ const btnWord = document.getElementById('btn-check-words')
 
 btnWord.addEventListener('click', palindromFunc);
 
-
 function palindromFunc(){
     const palindromaEl = document.getElementById('palindroma')
     let palWord = palindromaEl.value; 
+    let msg;
+    for (let i = palWord.length - 1; i >= 0; i --){
+        if( palWord[i] === palWord){
+            msg = 'Si la parola è palindroma';
+        }else{
+            msg = ' No,prova con un altra parola';
+        }
+    }
     console.log(palWord)
+    console.log(msg)
 
+    
 }
