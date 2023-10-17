@@ -51,7 +51,6 @@ function palindromFunc(){
 
 
 // Esercizio 2 
-// al click generi il numero random del pc, prendi il numero dell0utente e fai la somma poi fai un if ( utente ha scelto pari && numero % 2 = 0 ) { hai vinto } elseif ( utente ha scelto dispari && i % 2 !=0 ) { hai vinto } else { non hai vinto }
 
 const btnPlay = document.getElementById('play');
 
@@ -60,28 +59,28 @@ btnPlay.addEventListener('click', evenOddFunc);
 function evenOddFunc(){
     const userNumber = document.getElementById('even-odd');
     const userNumberEl = parseInt(userNumber.value);
-    let msg;
+    let msgEx2;
     if(isNaN(userNumberEl) || userNumberEl > 5 || userNumberEl === 0){
-        msg = 'Metti valori validi'
+        msgEx2 = 'Metti valori validi';
     }
     console.log(userNumberEl)
 
 
-    let compRndNumber = getRndInteg (1,5);
+    const compRndNumber = getRndInteg (1,5);
     console.log(compRndNumber)
 
-    let somma = userNumberEl + compRndNumber;
+    const somma = userNumberEl + compRndNumber;
     console.log(somma)
 
     if ( userNumberEl % 2 === 0 && somma % 2 === 0){
-        msg = 'Hai vinto'
+        msgEx2 = 'Hai vinto'
     } else if ( userNumberEl % 2 > 0 && somma % 2 > 0){
-        msg = 'Hai vinto'
+        msgEx2 = 'Hai vinto'
     }else{
-        msg = 'Non hai vinto'
+        msgEx2 = 'Non hai vinto'
     }
 
-    console.log(msg)
+    console.log(msgEx2)
 
 }
 
@@ -89,3 +88,8 @@ function evenOddFunc(){
 function getRndInteg (min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+
+
+
