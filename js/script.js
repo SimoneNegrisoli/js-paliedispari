@@ -11,25 +11,39 @@
 // Dichiariamo chi ha vinto.
 
 
-// Esercizio parola palindroma
+// Esercizio 1 parola palindroma: versione senza utility
 
 const btnWord = document.getElementById('btn-check-words')
 
 btnWord.addEventListener('click', palindromFunc);
 
+// function palindromFunc(){
+//     const palindromaEl = document.getElementById('palindroma')
+//     let palWord = palindromaEl.value; 
+//     let msg;
+//     for (let i = palWord.length - 1; i >= 0; i --){
+//         if( palWord[i] === palWord[palWord.length - 1 - i]){
+//             msg = 'Si la parola è palindroma';
+//         }else{
+//             msg = ' No,prova con un altra parola';
+//         }
+//     }
+//     console.log(palWord)
+//     console.log(msg)  
+// }
+
+// Esercizio 1: versione con utility
+
 function palindromFunc(){
     const palindromaEl = document.getElementById('palindroma')
-    let palWord = palindromaEl.value; 
+    let palWord = palindromaEl.value;
+    let palSplit = palWord.split("").reverse();
     let msg;
-    for (let i = palWord.length - 1; i >= 0; i --){
-        if( palWord[i] === palWord[palWord.length - 1 - i]){
-            msg = 'Si la parola è palindroma';
-        }else{
-            msg = ' No,prova con un altra parola';
-        }
-    }
-    console.log(palWord)
-    console.log(msg)
 
-    
+    if (palSplit.join() === palWord){
+        msg = 'Si la parola è palindroma';
+    }else{
+        msg = 'No,prova con un altra parola';
+    }
+    console.log(msg)  
 }
