@@ -22,7 +22,7 @@ btnWord.addEventListener('click', palindromFunc);
 //     let palWord = palindromaEl.value; 
 //     let msg;
 //     for (let i = palWord.length - 1; i >= 0; i --){
-//         if( palWord[i] === palWord[palWord.length - 1 - i]){
+//         if( palWord[i].toLowerCase() === palWord[palWord.length - 1 - i].toLowerCase()){
 //             msg = 'Si la parola è palindroma';
 //         }else{
 //             msg = ' No,prova con un altra parola';
@@ -37,13 +37,14 @@ btnWord.addEventListener('click', palindromFunc);
 function palindromFunc(){
     const palindromaEl = document.getElementById('palindroma')
     let palWord = palindromaEl.value;
-    let palSplit = palWord.split("").reverse();
+    let palSplit = palWord.split("").reverse().join("");
     let msg;
 
-    if (palSplit.join() === palWord){
+    if (palSplit.toLowerCase() === palWord.toLowerCase()){
         msg = 'Si la parola è palindroma';
     }else{
         msg = 'No,prova con un altra parola';
     }
+    console.log(palSplit)
     console.log(msg)  
 }
